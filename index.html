@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>For Xenia 💫</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Animated starry background -->
+    <canvas id="star-canvas"></canvas>
+
+    <!-- Soft color overlay -->
+    <div class="color-glow"></div>
+
+    <!-- Intro envelope -->
+    <div class="envelope-wrapper" id="envelope-wrapper">
+        <div class="envelope">
+            <div class="envelope-flap"></div>
+            <div class="envelope-body">
+                <div class="envelope-message">
+                    <p>For Xenia,</p>
+                    <p>On your 39th birthday, a little surprise from Furqan 💌</p>
+                </div>
+            </div>
+        </div>
+        <button class="open-letter-btn" id="open-letter-btn">Open your surprise ✨</button>
+    </div>
+
+    <!-- Main content, hidden at first -->
+    <div class="main-content hidden" id="main-content">
+        <div class="card">
+            <div class="card-photo">
+                <div class="photo-glow"></div>
+                <img src="xenia.jpg" alt="Xenia">
+            </div>
+
+            <div class="card-text">
+                <h1 class="title-script">Happy 39th Birthday, Xenia!</h1>
+                <h2 class="subtitle">You are truly a blessing 🌸</h2>
+
+                <p class="typewriter" id="typewriter-text"
+                   data-full-text="Thinking of you on your 39th birthday! Today, I just want to thank God for the beautiful person you are and ask Him to pour out His blessings upon you. May you have the best year ahead. You are the best, Xenia.">
+                </p>
+
+                <p class="signature">Your mate,<br><span>Furqan Ahmed</span></p>
+
+                <div class="controls">
+                    <button id="music-toggle" class="music-btn">
+                        Play Music 🎵
+                    </button>
+                    <span class="hint">Tip: Turn up your volume and watch the sky ✨</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Soft floating particles -->
+    <div class="floating-orbs">
+        <span></span><span></span><span></span>
+        <span></span><span></span><span></span>
+    </div>
+
+    <!-- Audio -->
+    <audio id="bg-music" loop>
+        <source src="classical.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
