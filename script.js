@@ -1,16 +1,15 @@
 // DOM elements
 const envelopeWrapper = document.getElementById("envelope-wrapper");
 const openLetterBtn = document.getElementById("open-letter-btn");
-const mainContent = document.getElementById("main-content");
+const typewriterEl = document.getElementById("typewriter-text");
 const musicToggle = document.getElementById("music-toggle");
 const bgMusic = document.getElementById("bg-music");
-const typewriterEl = document.getElementById("typewriter-text");
 const starCanvas = document.getElementById("star-canvas");
 const ctx = starCanvas.getContext("2d");
 
 let isMusicPlaying = false;
 
-// Resize canvas
+/* ========= STAR CANVAS ========= */
 function resizeCanvas() {
     starCanvas.width = window.innerWidth;
     starCanvas.height = window.innerHeight;
@@ -18,7 +17,6 @@ function resizeCanvas() {
 resizeCanvas();
 window.addEventListener("resize", resizeCanvas);
 
-// Starfield
 const stars = [];
 const STAR_COUNT = 160;
 
@@ -53,25 +51,20 @@ function drawStars() {
 createStars();
 drawStars();
 
-// Envelope open → show card + typewriter
+/* ========= ENVELOPE OPEN + TYPEWRITER ========= */
 openLetterBtn.addEventListener("click", () => {
+    // Flap animation
     envelopeWrapper.classList.add("opened");
 
-    // Wait for flap animation
+    // After flap opens, scroll to card & start typewriter
     setTimeout(() => {
-        envelopeWrapper.style.transition = "opacity 0.8s ease";
-        envelopeWrapper.style.opacity = "0";
-
-        setTimeout(() => {
-            envelopeWrapper.style.display = "none";
-            mainContent.classList.remove("hidden");
-            // Start typewriter
-            startTypewriter();
-        }, 800);
+        const cardSection = document.getElementById("card-section");
+        cardSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        startTypewriter();
     }, 900);
 });
 
-// Typewriter effect
+// Typewriter
 function startTypewriter() {
     const fullText = typewriterEl.getAttribute("data-full-text");
     typewriterEl.textContent = "";
@@ -81,14 +74,15 @@ function startTypewriter() {
         if (idx <= fullText.length) {
             typewriterEl.textContent = fullText.slice(0, idx);
             idx++;
-            const delay = fullText[idx - 1] === "." ? 90 : 40;
+            const char = fullText[idx - 1];
+            const delay = char === "." || char === "!" || char === "?" ? 90 : 40;
             setTimeout(typeChar, delay);
         }
     }
     typeChar();
 }
 
-// Music toggle
+/* ========= MUSIC TOGGLE ========= */
 musicToggle.addEventListener("click", async () => {
     try {
         if (!isMusicPlaying) {
@@ -107,5 +101,6 @@ musicToggle.addEventListener("click", async () => {
     }
 });
 
-// Start with button in "paused" style
+// Start button in "paused" style
 musicToggle.classList.add("paused");
+
