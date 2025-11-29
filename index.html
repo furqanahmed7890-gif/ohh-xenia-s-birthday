@@ -2,66 +2,74 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>For Xenia 💫</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Xenia 💫🌸</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Animated starry background -->
-    <canvas id="star-canvas"></canvas>
+    <!-- Starry sky background -->
+    <canvas id="star-canvas" aria-hidden="true"></canvas>
 
-    <!-- Soft color overlay -->
-    <div class="color-glow"></div>
+    <!-- Color + floral overlay -->
+    <div class="color-glow" aria-hidden="true"></div>
 
-    <!-- Intro envelope -->
-    <div class="envelope-wrapper" id="envelope-wrapper">
-        <div class="envelope">
-            <div class="envelope-flap"></div>
-            <div class="envelope-body">
-                <div class="envelope-message">
-                    <p>For Xenia,</p>
-                    <p>On your 39th birthday, a little surprise from Furqan 💌</p>
-                </div>
-            </div>
-        </div>
-        <button class="open-letter-btn" id="open-letter-btn">Open your surprise ✨</button>
-    </div>
-
-    <!-- Main content, hidden at first -->
-    <div class="main-content hidden" id="main-content">
-        <div class="card">
-            <div class="card-photo">
-                <div class="photo-glow"></div>
-                <img src="xenia.jpg" alt="Xenia">
-            </div>
-
-            <div class="card-text">
-                <h1 class="title-script">Happy 39th Birthday, Xenia!</h1>
-                <h2 class="subtitle">You are truly a blessing 🌸</h2>
-
-                <p class="typewriter" id="typewriter-text"
-                   data-full-text="Thinking of you on your 39th birthday! Today, I just want to thank God for the beautiful person you are and ask Him to pour out His blessings upon you. May you have the best year ahead. You are the best, Xenia.">
-                </p>
-
-                <p class="signature">Your mate,<br><span>Furqan Ahmed</span></p>
-
-                <div class="controls">
-                    <button id="music-toggle" class="music-btn">
-                        Play Music 🎵
-                    </button>
-                    <span class="hint">Tip: Turn up your volume and watch the sky ✨</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Soft floating particles -->
-    <div class="floating-orbs">
+    <!-- Floating petals / orbs -->
+    <div class="floating-orbs" aria-hidden="true">
         <span></span><span></span><span></span>
         <span></span><span></span><span></span>
     </div>
+
+    <!-- Page content -->
+    <main class="page-wrapper">
+        <!-- Intro envelope section -->
+        <section class="section section-center" id="intro-section">
+            <div class="envelope-wrapper" id="envelope-wrapper">
+                <div class="envelope">
+                    <div class="envelope-flap"></div>
+                    <div class="envelope-body">
+                        <div class="envelope-message">
+                            <p>For Xenia,</p>
+                            <p>On your 39th birthday, a little starry-floral surprise from Furqan 💌</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="open-letter-btn" id="open-letter-btn">Open your surprise ✨</button>
+            </div>
+        </section>
+
+        <!-- Main card section -->
+        <section class="section" id="card-section">
+            <div class="card">
+                <div class="card-photo">
+                    <div class="photo-glow"></div>
+                    <img src="xenia.jpg" alt="Xenia">
+                    <div class="photo-caption">
+                        Under a sky full of stars, a flower like you shines the brightest ✨🌸
+                    </div>
+                </div>
+
+                <div class="card-text">
+                    <h1 class="title-script">Happy 39th Birthday, Xenia!</h1>
+                    <h2 class="subtitle">You are a beautiful star in God’s garden 🌸</h2>
+
+                    <p class="typewriter" id="typewriter-text"
+                       data-full-text="Thinking of you on your 39th birthday! Today, I just want to thank God for the beautiful person you are and ask Him to pour out His blessings upon you. May you have the best year ahead. You are the best, Xenia.">
+                    </p>
+
+                    <p class="signature">With love,<br><span>Furqan Ahmed</span></p>
+
+                    <div class="controls">
+                        <button id="music-toggle" class="music-btn">
+                            Play Music 🎵
+                        </button>
+                        <span class="hint">Best with sound on — and a quiet moment under the stars ✨</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Audio -->
     <audio id="bg-music" loop>
